@@ -10,7 +10,13 @@ export {
 const useCachedResources = () => {
   const [appIsReady, setAppIsReady] = useState(false);
   const [fontsLoaded, error] = useFonts({
-    'racesport-regular': require('../assets/fonts/RaceSport.ttf')
+    'sf-pro-rounded-regular': require('../assets/fonts/SF-Pro-Rounded-Regular.otf'),
+    'sf-pro-rounded-black': require('../assets/fonts/SF-Pro-Rounded-Black.otf'),
+    'sf-pro-rounded-bold': require('../assets/fonts/SF-Pro-Rounded-Bold.otf'),
+    'sf-pro-rounded-light': require('../assets/fonts/SF-Pro-Rounded-Light.otf'),
+    'sf-pro-rounded-medium': require('../assets/fonts/SF-Pro-Rounded-Medium.otf'),
+    'sf-pro-rounded-semiBold': require('../assets/fonts/SF-Pro-Rounded-Semibold.otf'),
+    'sf-pro-rounded-Thin': require('../assets/fonts/SF-Pro-Rounded-Thin.otf')
   });
 
   useEffect(() => {
@@ -40,7 +46,7 @@ const useCachedResources = () => {
       // TODO: Remove the 'setTimeout' portion of this.  Used purely for testing.
       setTimeout(async () => {
         await SplashScreen.hideAsync();
-      }, 3000)
+      }, 3000);
     }
   }, [appIsReady]);
 
