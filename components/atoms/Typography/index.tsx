@@ -14,24 +14,22 @@ import { tv, type VariantProps } from 'tailwind-variants';
  * Black or Heavy: 900
  */
 export const variants = tv({
-  base: 'text-[#FFFFFF] dark:text-[#FFFFFF] font-sf-pro-rounded-regular ',
+  base: 'text-[#FFFFFF] dark:text-[#FFFFFF] font-sf-pro-rounded-regular',
   variants: {
     font: {
       regular: 'font-sf-pro-rounded-regular',
       bold: 'font-sf-pro-rounded-bold',
       semiBold: 'font-sf-pro-rounded-semiBold',
       medium: 'font-sf-pro-rounded-medium',
-    light: 'font-sf-pro-rounded-light',
+      light: 'font-sf-pro-rounded-light',
       black: 'font-sf-pro-rounded-black',
       thin: 'font-sf-pro-rounded-thin'
     },
     size: {
-      '10': 'text-display-1',
+      '10': 'text-10'
     }
   }
 });
-// TODO: Look to remove this.  It is being used in one other component at the moment for a TextInput
-export const typography = variants;
 
 type TypographyVariants = VariantProps<typeof variants>;
 

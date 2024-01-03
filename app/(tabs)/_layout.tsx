@@ -1,5 +1,6 @@
 import SVG from '@/assets/svg';
 import TabBarIcon from '@/components/atoms/TabBarIcon';
+import Typography from '@/components/atoms/Typography';
 import { Tabs } from 'expo-router';
 import { StyleSheet } from 'react-native';
 
@@ -10,6 +11,9 @@ export default function AuthStackLayout() {
       screenOptions={{
         tabBarStyle: styles.defaultTabBar,
         tabBarActiveTintColor: '#FFFFFF',
+        tabBarLabelStyle: {
+          fontFamily: 'sf-pro-rounded-medium'
+        }
       }}
     >
       <Tabs.Screen
@@ -63,6 +67,8 @@ export default function AuthStackLayout() {
 
 const styles = StyleSheet.create({
   defaultTabBar: {
-    backgroundColor: '#000000'
+    backgroundColor: '#000000',
+    borderTopWidth: 0.33,
+    borderTopColor: 'rgba(255, 255, 255, 0.45)'
   }
 });

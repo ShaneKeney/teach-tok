@@ -16,7 +16,7 @@ const useCachedResources = () => {
     'sf-pro-rounded-light': require('../assets/fonts/SF-Pro-Rounded-Light.otf'),
     'sf-pro-rounded-medium': require('../assets/fonts/SF-Pro-Rounded-Medium.otf'),
     'sf-pro-rounded-semiBold': require('../assets/fonts/SF-Pro-Rounded-Semibold.otf'),
-    'sf-pro-rounded-Thin': require('../assets/fonts/SF-Pro-Rounded-Thin.otf')
+    'sf-pro-rounded-thin': require('../assets/fonts/SF-Pro-Rounded-Thin.otf')
   });
 
   useEffect(() => {
