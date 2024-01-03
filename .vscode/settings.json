@@ -1,0 +1,19 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1D1C80",
+    "titleBar.activeBackground": "#2827B4",
+    "titleBar.activeForeground": "#FBFBFE"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  // Optionally, you can set format on save for specific languages only
+  "[javascript]": {
+      "editor.formatOnSave": true
+  },
+  "[typescript]": {
+      "editor.formatOnSave": true
+  }
+}

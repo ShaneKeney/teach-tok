@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "sifat.refresh-window",
+    "expo.vscode-expo-tools",
+    "naumovs.color-highlight",
+    "simonsiefke.svg-preview",
+    "christian-kohler.path-intellisense"
+  ]
+}
