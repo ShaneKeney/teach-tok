@@ -2,8 +2,6 @@
 
 ## Getting Started:
 
-// TODO: Add instructions for tweaking pre-defined template values...
-
 ```
 npm install
 ```
@@ -13,7 +11,7 @@ You can then start the locally running development server with:
 ```
 npm dev
 ```
-for Expo Go|
+for Expo Go
 
 or
 
@@ -33,7 +31,7 @@ Comment out `REACT_NATIVE_PACKAGER_HOSTNAME` and add your local IP address shown
 
 - Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
 - Nativewind (TailwindCSS for React Native)
-- Pnpm (package manager)
+- NPM (package manager)
 - Typescript
 
 ## Opinionated Template
@@ -96,12 +94,12 @@ See `.vscode/extensions.json` for a list of recommended extensions.
 
 ### EAS Build
 
-// TODO:
+// N/A:
 
 ### EAS Submit
 
-// TODO:
+// N/A:
 
 ### EAS Updates:
 
-// TODO:
+// N/A:
