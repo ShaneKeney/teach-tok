@@ -19,7 +19,10 @@ module.exports = {
         //     letterSpacing: '-0.01'
         //   }
         // ],
-        10: ['10px']
+        10: ['10px'],
+        12: ['12px'],
+        14: ['14px'],
+        16: ['16px']
       },
       fontFamily: {
         // Example custom font.  Requires custom font to be loaded via expo-font.  See useCachedResources.ts and README.md.

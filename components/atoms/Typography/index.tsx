@@ -26,7 +26,8 @@ export const variants = tv({
       thin: 'font-sf-pro-rounded-thin'
     },
     size: {
-      '10': 'text-10'
+      '10': 'text-10',
+      '16': 'text-16'
     }
   }
 });

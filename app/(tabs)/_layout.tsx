@@ -1,4 +1,5 @@
 import SVG from '@/assets/svg';
+import ForYouTitle from '@/components/atoms/ForYouTitle';
 import TabBarIcon from '@/components/atoms/TabBarIcon';
 import Typography from '@/components/atoms/Typography';
 import { Tabs } from 'expo-router';
@@ -13,7 +14,8 @@ export default function AuthStackLayout() {
         tabBarActiveTintColor: '#FFFFFF',
         tabBarLabelStyle: {
           fontFamily: 'sf-pro-rounded-medium'
-        }
+        },
+        headerTransparent: true
       }}
     >
       <Tabs.Screen
@@ -22,7 +24,8 @@ export default function AuthStackLayout() {
           title: 'Home',
           tabBarIcon: ({ focused }) => (
             <TabBarIcon Icon={SVG.Home} focused={focused} width={20} height={21} />
-          )
+          ),
+          headerTitle: () => <ForYouTitle />
         }}
       />
       <Tabs.Screen
