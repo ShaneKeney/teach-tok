@@ -1,12 +1,12 @@
-import { Text, SafeAreaView, View, FlatList, ViewabilityConfig, ViewToken } from 'react-native';
+import { Text, SafeAreaView, View, FlatList, ViewToken } from 'react-native';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import getNextQuestion from '@/query/getNextQuestion';
 import { Image } from 'expo-image';
 import { useCallback, useEffect, useState } from 'react';
-import { cssInterop } from 'nativewind';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '@/utils/sizeMatters';
+import MultipleChoice from '@/components/molecules/MultipleChoice';
 
 const blurhash =
   '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -70,13 +70,25 @@ export default function Home() {
         data={data?.pages || []}
         renderItem={({ item }) => {
           return (
-            <Image
-              style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT - tabBarHeight }}
-              source={item[0].image}
-              placeholder={blurhash}
-              contentFit="cover"
-              transition={1000}
-            />
+            <>
+              <Image
+                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT - tabBarHeight }}
+                source={item[0].image}
+                placeholder={blurhash}
+                contentFit="cover"
+                transition={1000}
+              />
+
+              <View
+                style={{
+                  height: SCREEN_HEIGHT - tabBarHeight,
+                  width: SCREEN_WIDTH
+                }}
+                className="absolute bg-black opacity-[0.45]"
+              ></View>
+
+              <MultipleChoice />
+            </>
           );
         }}
         // Because the API is random and we are not deduping response from it.  We will combine the id and index to ensure uniqueness
@@ -89,10 +101,10 @@ export default function Home() {
           index
         })}
         disableIntervalMomentum
-        onViewableItemsChanged={onViewableItemsChanged}
-        viewabilityConfig={{
-          itemVisiblePercentThreshold: 50
-        }}
+        // onViewableItemsChanged={onViewableItemsChanged}
+        // viewabilityConfig={{
+        //   itemVisiblePercentThreshold: 50
+        // }}
         showsVerticalScrollIndicator={false}
       />
 

@@ -3,7 +3,7 @@ import ForYouTitle from '@/components/atoms/ForYouTitle';
 import TabBarIcon from '@/components/atoms/TabBarIcon';
 import Typography from '@/components/atoms/Typography';
 import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
 export default function AuthStackLayout() {
   return (
@@ -25,7 +25,20 @@ export default function AuthStackLayout() {
           tabBarIcon: ({ focused }) => (
             <TabBarIcon Icon={SVG.Home} focused={focused} width={20} height={21} />
           ),
-          headerTitle: () => <ForYouTitle />
+          headerTitle: () => <ForYouTitle />,
+          headerRight: () => (
+            <TouchableOpacity onPress={() => console.log('Search Pressed!')}>
+              <SVG.MagnifyGlass className="mr-4 fill-white" />
+            </TouchableOpacity>
+          ),
+          headerLeft: () => (
+            <View className="ml-4 flex-row items-center justify-center gap-1">
+              <SVG.Clock className="fill-white" opacity={0.6} />
+              <Typography className="opacity-[0.6]" font="regular" size="14">
+                10m
+              </Typography>
+            </View>
+          )
         }}
       />
       <Tabs.Screen
