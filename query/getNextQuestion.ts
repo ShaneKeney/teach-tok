@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-type MultipleChoiceQuestion = {
+export type MultipleChoiceQuestion = {
   type: 'mcq';
   id: number;
   playlist: string;

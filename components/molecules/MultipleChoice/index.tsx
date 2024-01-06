@@ -1,14 +1,20 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { SCREEN_HEIGHT } from '@/utils/sizeMatters';
-import SVG from '@/assets/svg';
-import Typography from '@/components/atoms/Typography';
 import Playlist from './Playlist';
+import ActionBar from './ActionBar';
+import { MultipleChoiceQuestion } from '@/query/getNextQuestion';
 
-export default function MultipleChoice() {
+type Props = {
+  data: MultipleChoiceQuestion;
+};
+
+export default function MultipleChoice({ data }: Props) {
   const tabBarHeight = useBottomTabBarHeight();
   const headerHeight = useHeaderHeight();
+
+  console.log('data', JSON.stringify(data, null, 2));
 
   return (
     <View
@@ -20,8 +26,12 @@ export default function MultipleChoice() {
     >
       {/* TODO: Create context for multiple choice questions
       TODO: Complete UI for MultipleChoice component */}
-      <View className="flex-1 bg-red-500"></View>
-      <Playlist />
+      <View className="flex-1 flex-row gap-3">
+        <View className="flex-1 bg-green-500"></View>
+        {/* TODO: API doesn't seem to return the values for each action item */}
+        <MultipleChoice.ActionBar avatar={data.user.avatar} />
+      </View>
+      <MultipleChoice.Playlist />
     </View>
   );
 }
@@ -29,3 +39,4 @@ export default function MultipleChoice() {
 // Adds some additional functionality to Intellisense and very helpful if you
 // want to create composable components
 MultipleChoice.Playlist = Playlist;
+MultipleChoice.ActionBar = ActionBar;

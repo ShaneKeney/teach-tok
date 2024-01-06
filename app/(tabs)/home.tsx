@@ -1,5 +1,4 @@
-import { Text, SafeAreaView, View, FlatList, ViewToken } from 'react-native';
-import { useHeaderHeight } from '@react-navigation/elements';
+import { View, FlatList, ViewToken } from 'react-native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import getNextQuestion from '@/query/getNextQuestion';
@@ -7,12 +6,9 @@ import { Image } from 'expo-image';
 import { useCallback, useEffect, useState } from 'react';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '@/utils/sizeMatters';
 import MultipleChoice from '@/components/molecules/MultipleChoice';
-
-const blurhash =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+import { blurhash } from '@/utils/image';
 
 export default function Home() {
-  const headerHeight = useHeaderHeight();
   const tabBarHeight = useBottomTabBarHeight();
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -63,7 +59,6 @@ export default function Home() {
     []
   );
 
-  console.log('data', data?.pages.length);
   return (
     <View className="flex-1">
       <FlatList
@@ -87,7 +82,7 @@ export default function Home() {
                 className="absolute bg-black opacity-[0.45]"
               ></View>
 
-              <MultipleChoice />
+              <MultipleChoice data={item[0]} />
             </>
           );
         }}
