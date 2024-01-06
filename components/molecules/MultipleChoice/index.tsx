@@ -24,14 +24,13 @@ export default function MultipleChoice({ data }: Props) {
         top: headerHeight
       }}
     >
-      {/* TODO: Create context for multiple choice questions
-      TODO: Complete UI for MultipleChoice component */}
+      {/* TODO: Complete UI for MultipleChoice component */}
       <View className="flex-1 flex-row gap-3">
-        <View className="flex-1 bg-green-500"></View>
+        <View className="flex-1 gap-6 bg-green-500"></View>
         {/* TODO: API doesn't seem to return the values for each action item */}
         <MultipleChoice.ActionBar avatar={data.user.avatar} />
       </View>
-      <MultipleChoice.Playlist />
+      <MultipleChoice.Playlist text={data.playlist} />
     </View>
   );
 }
