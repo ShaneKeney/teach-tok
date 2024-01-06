@@ -22,7 +22,7 @@ export type Option = {
 // Each GET request returns a new MC question
 export default async function getNextQuestion() {
   const response = await axios.get<MultipleChoiceQuestion>(
-    'https://cross-platform.rp.devfactory.com/for_you'
+    `${process.env.EXPO_PUBLIC_BASE_URL}/for_you`
   );
   return [response.data];
 }
