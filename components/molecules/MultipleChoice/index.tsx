@@ -5,6 +5,8 @@ import { SCREEN_HEIGHT } from '@/utils/sizeMatters';
 import Playlist from './Playlist';
 import ActionBar from './ActionBar';
 import { MultipleChoiceQuestion } from '@/query/getNextQuestion';
+import Typography from '@/components/atoms/Typography';
+import Info from './Info';
 
 type Props = {
   data: MultipleChoiceQuestion;
@@ -25,8 +27,11 @@ export default function MultipleChoice({ data }: Props) {
       }}
     >
       {/* TODO: Complete UI for MultipleChoice component */}
-      <View className="flex-1 flex-row gap-3">
-        <View className="flex-1 gap-6 bg-green-500"></View>
+      <View className="flex-1 flex-row gap-3 pl-4">
+        <View className="flex-1 gap-6 ">
+          <View className="flex-1 bg-yellow-500"></View>
+          <MultipleChoice.Info description={data.description} />
+        </View>
         {/* TODO: API doesn't seem to return the values for each action item */}
         <MultipleChoice.ActionBar avatar={data.user.avatar} />
       </View>
@@ -39,3 +44,4 @@ export default function MultipleChoice({ data }: Props) {
 // want to create composable components
 MultipleChoice.Playlist = Playlist;
 MultipleChoice.ActionBar = ActionBar;
+MultipleChoice.Info = Info;

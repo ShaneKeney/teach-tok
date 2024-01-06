@@ -30,6 +30,7 @@ export const variants = tv({
       '12': 'text-12',
       '13': 'text-13',
       '14': 'text-14',
+      '15': 'text-15',
       '16': 'text-16'
     }
   }

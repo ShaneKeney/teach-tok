@@ -23,6 +23,7 @@ module.exports = {
         12: ['12px'],
         13: ['13px'],
         14: ['14px'],
+        15: ['15px'],
         16: ['16px']
       },
       fontFamily: {
