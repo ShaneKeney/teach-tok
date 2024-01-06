@@ -7,6 +7,7 @@ import ActionBar from './ActionBar';
 import { MultipleChoiceQuestion } from '@/query/getNextQuestion';
 import Typography from '@/components/atoms/Typography';
 import Info from './Info';
+import Question from './Question';
 
 type Props = {
   data: MultipleChoiceQuestion;
@@ -28,8 +29,8 @@ export default function MultipleChoice({ data }: Props) {
     >
       {/* TODO: Complete UI for MultipleChoice component */}
       <View className="flex-1 flex-row gap-3 pl-4">
-        <View className="flex-1 gap-6 ">
-          <View className="flex-1 bg-yellow-500"></View>
+        <View className="flex-1 gap-6">
+          <MultipleChoice.Question data={data} />
           <MultipleChoice.Info description={data.description} />
         </View>
         {/* TODO: API doesn't seem to return the values for each action item */}
@@ -45,3 +46,4 @@ export default function MultipleChoice({ data }: Props) {
 MultipleChoice.Playlist = Playlist;
 MultipleChoice.ActionBar = ActionBar;
 MultipleChoice.Info = Info;
+MultipleChoice.Question = Question;

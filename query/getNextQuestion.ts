@@ -14,7 +14,7 @@ export type MultipleChoiceQuestion = {
   };
 };
 
-type Option = {
+export type Option = {
   id: 'A' | 'B' | 'C';
   answer: string;
 };

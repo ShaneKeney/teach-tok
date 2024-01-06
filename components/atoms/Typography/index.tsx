@@ -31,7 +31,9 @@ export const variants = tv({
       '13': 'text-13',
       '14': 'text-14',
       '15': 'text-15',
-      '16': 'text-16'
+      '16': 'text-16',
+      '17': 'text-17',
+      '22': 'text-22'
     }
   }
 });

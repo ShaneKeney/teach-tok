@@ -24,7 +24,9 @@ module.exports = {
         13: ['13px'],
         14: ['14px'],
         15: ['15px'],
-        16: ['16px']
+        16: ['16px'],
+        17: ['17px'],
+        22: ['22px']
       },
       fontFamily: {
         // Example custom font.  Requires custom font to be loaded via expo-font.  See useCachedResources.ts and README.md.
