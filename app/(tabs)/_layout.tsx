@@ -12,7 +12,6 @@ export default function AuthStackLayout() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('Seconds: ', seconds);
       setSeconds((prev) => prev + 1);
     }, 1000);
 
