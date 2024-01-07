@@ -4,7 +4,7 @@ import TabBarIcon from '@/components/atoms/TabBarIcon';
 import Typography from '@/components/atoms/Typography';
 import { formatTime } from '@/utils/formatters';
 import { Tabs } from 'expo-router';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
 export default function AuthStackLayout() {
