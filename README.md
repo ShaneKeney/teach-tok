@@ -1,5 +1,12 @@
 # Template Walkthrough
 
+## Demo
+
+[Link to Demo Video](./assets/videos/demo.mov)
+
+![Demo GIF](./assets/videos/demo.gif)
+
+
 ## Getting Started:
 
 ```
