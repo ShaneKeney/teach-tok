@@ -3,15 +3,16 @@ import { View } from 'react-native';
 
 type Props = {
   description: string;
+  userName: string;
 };
 
-export default function Info({ description }: Props) {
+export default function Info({ description, userName }: Props) {
   // Add some logic to format the desciption string and parsing out the #...
   const { extractedHashTag, parsedString } = parseHashTag(description);
   return (
     <View className="gap-[6px]">
       <Typography font="semiBold" size="15">
-        AP US History
+        {userName}
       </Typography>
       <Typography font="regular" size="13">
         {parsedString}

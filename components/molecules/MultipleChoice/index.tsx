@@ -28,7 +28,7 @@ export default function MultipleChoice({ data }: Props) {
       <View className="flex-1 flex-row gap-3 pl-4">
         <View className="flex-1 gap-6">
           <MultipleChoice.Question data={data} />
-          <MultipleChoice.Info description={data.description} />
+          <MultipleChoice.Info description={data.description} userName={data.user.name} />
         </View>
         {/* TODO: API doesn't seem to return the values for each action item */}
         <MultipleChoice.ActionBar avatar={data.user.avatar} />
