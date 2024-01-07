@@ -1,9 +1,8 @@
-import Typography from '@/components/atoms/Typography';
 import getAnswer from '@/query/getAnswer';
 import { Option } from '@/query/getNextQuestion';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { View } from 'react-native';
 import Selector from './Option';
 
 type OptionsProps = {
@@ -24,16 +23,22 @@ export default function Options({ options, id }: OptionsProps) {
     queryFn: ({ queryKey }) => getAnswer(queryKey[1]) // queryKey[1] is the id
   });
 
-  console.log('Answer: ', data);
+  const optionState = (id: Option['id']) => {
+    if (!selections.includes(id)) return 'unselected';
+    if (data?.correct_options[0].id === id) return 'correct';
+    return 'incorrect';
+  };
 
   return (
     <View className="gap-2">
-      {/* {options.map((option, index) => (
-        <Selector option={option} key={index} onOptionPress={onOptionPress} />
-      ))} */}
-      <Selector option={options[0]} key={'A'} onOptionPress={onOptionPress} result={'correct'} />
-      <Selector option={options[1]} key={'B'} onOptionPress={onOptionPress} result={'incorrect'} />
-      <Selector option={options[2]} key={'C'} onOptionPress={onOptionPress} result="unselected" />
+      {options.map((option, index) => (
+        <Selector
+          option={option}
+          key={index}
+          onOptionPress={onOptionPress}
+          result={optionState(option.id)}
+        />
+      ))}
     </View>
   );
 }

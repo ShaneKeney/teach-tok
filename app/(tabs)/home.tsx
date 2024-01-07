@@ -96,14 +96,12 @@ export default function Home() {
           index
         })}
         disableIntervalMomentum
-        // onViewableItemsChanged={onViewableItemsChanged}
-        // viewabilityConfig={{
-        //   itemVisiblePercentThreshold: 50
-        // }}
+        onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={{
+          itemVisiblePercentThreshold: 50
+        }}
         showsVerticalScrollIndicator={false}
       />
-
-      {/* <SafeAreaView style={{ marginTop: headerHeight }}></SafeAreaView> */}
     </View>
   );
 }

@@ -5,7 +5,6 @@ import { SCREEN_HEIGHT } from '@/utils/sizeMatters';
 import Playlist from './Playlist';
 import ActionBar from './ActionBar';
 import { MultipleChoiceQuestion } from '@/query/getNextQuestion';
-import Typography from '@/components/atoms/Typography';
 import Info from './Info';
 import Question from './Question';
 
@@ -16,8 +15,6 @@ type Props = {
 export default function MultipleChoice({ data }: Props) {
   const tabBarHeight = useBottomTabBarHeight();
   const headerHeight = useHeaderHeight();
-
-  console.log('data', JSON.stringify(data, null, 2));
 
   return (
     <View

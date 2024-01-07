@@ -8,7 +8,6 @@ type Props = {
 };
 
 export default function Question({ data }: Props) {
-  console.log(JSON.stringify(data, null, 2));
   return (
     <View className="flex-1 gap-6">
       <Question.Title question={data.question} />

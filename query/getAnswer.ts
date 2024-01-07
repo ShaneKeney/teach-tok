@@ -11,5 +11,5 @@ export default async function getAnswer(id: number) {
   const response = await axios.get<QuestionAnswer>(
     `${process.env.EXPO_PUBLIC_BASE_URL}/reveal?id=${id}`
   );
-  return [response.data];
+  return response.data;
 }
