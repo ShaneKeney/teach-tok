@@ -2,10 +2,23 @@ import SVG from '@/assets/svg';
 import ForYouTitle from '@/components/atoms/ForYouTitle';
 import TabBarIcon from '@/components/atoms/TabBarIcon';
 import Typography from '@/components/atoms/Typography';
+import { formatTime } from '@/utils/formatters';
 import { Tabs } from 'expo-router';
+import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
 export default function AuthStackLayout() {
+  const [seconds, setSeconds] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('Seconds: ', seconds);
+      setSeconds((prev) => prev + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Tabs
       initialRouteName="home"
@@ -35,7 +48,7 @@ export default function AuthStackLayout() {
             <View className="ml-4 flex-row items-center justify-center gap-1">
               <SVG.Clock className="fill-white" opacity={0.6} />
               <Typography className="opacity-[0.6]" font="regular" size="14">
-                10m
+                {formatTime(seconds)}
               </Typography>
             </View>
           )
