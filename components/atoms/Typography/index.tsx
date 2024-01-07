@@ -46,8 +46,6 @@ interface Props extends TypographyVariants {
 }
 
 function Typography({ font, size, children, className }: Props) {
-  console.log(variants({ font: font, size: size }));
-  console.log(className);
   return <Text className={`${variants({ font: font, size: size })} ${className}`}>{children}</Text>;
 }
 

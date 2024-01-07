@@ -34,8 +34,6 @@ export default function Home() {
       }
     });
 
-  const currentQuestion = data?.pages[currentPage][0];
-
   // Responsible for making sure we have the next 5 pages of data as the index changes
   useEffect(() => {
     if (isFetching) return;
