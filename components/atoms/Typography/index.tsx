@@ -14,7 +14,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
  * Black or Heavy: 900
  */
 export const variants = tv({
-  base: 'text-[#FFFFFF] dark:text-[#FFFFFF] font-sf-pro-rounded-regular',
+  base: 'color-white dark:color-white font-sf-pro-rounded-regular',
   variants: {
     font: {
       regular: 'font-sf-pro-rounded-regular',
@@ -46,6 +46,8 @@ interface Props extends TypographyVariants {
 }
 
 function Typography({ font, size, children, className }: Props) {
+  console.log(variants({ font: font, size: size }));
+  console.log(className);
   return <Text className={`${variants({ font: font, size: size })} ${className}`}>{children}</Text>;
 }
 
